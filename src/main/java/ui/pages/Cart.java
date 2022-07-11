@@ -11,52 +11,81 @@ import java.util.List;
 // page_url = https://www.microsoft.com/es-mx/
 public class Cart extends BasePage {
     @FindBy(id = "search")
-    public WebElement searchIcon;
+    private WebElement searchIcon;
 
     @FindBy(id = "uhf-shopping-cart")
-    public WebElement CartBtn;
+    private WebElement cartBtn;
 
     @FindBy(id = "shellmenu_2")
-    public WebElement windowsLink;
+    private WebElement windowsLink;
 
     @FindBy(id = "cli_shellHeaderSearchInput")
-    public WebElement searchInput;
+    private WebElement searchInput;
 
     @FindBy(id = "universal-header-search-auto-suggest-ul")
-    public WebElement suggestionListSearch;
+    private WebElement suggestionListSearch;
 
     @FindBy(id = "onestore-quicklinksmodule-po1wqqs-quicklink2")
-    public WebElement digitalGamesLink;
+    private WebElement digitalGamesLink;
 
     @FindBy(id = "R1MarketRedirect-1")
-    public WebElement changeStoreLanguageDialog;
+    private WebElement changeStoreLanguageDialog;
 
-    @FindBy(id = "R1MarketRedirect-submit")
-    public WebElement stayIntheSiteDialogBtn;
+    @FindBy(id = "R1MarketRedirect-close")
+    private WebElement stayIntheSiteDialogBtn;
 
     @FindBy(css = "a[aria-label='ver colección xbox juegos digitales']")
-    public WebElement digitalGamesCollectionLink;
+    private WebElement digitalGamesCollectionLink;
 
     @FindBy(css = "div[class='c-group f-wrap-items context-list-page']")
-    public WebElement groupItemGames;
+    private WebElement groupItemGames;
 
     @FindBy(css = "a[aria-label='página siguiente']")
-    public WebElement nextPage;
+    private WebElement nextPage;
 
     @FindBy(css = "a[aria-label='página anterior']")
-    public WebElement previousPage;
+    private WebElement previousPage;
 
     @FindBy(xpath = "//button[contains(@data-m, 'BuyButton')]")
-    public WebElement buyButton;
+    private WebElement buyButton;
 
     @FindBy(css = ".c-channel-placement-price span[itemprop='price']")
-    public WebElement priceItem;
+    private WebElement priceItem;
 
     @FindBy(xpath = "//div[@class='ProductActionsPanel-module__desktopProductActionsPanel___1MnpC']//span[contains(@class, 'Price-module__boldText___34T2w')]")
-    public WebElement priceInIndividualPage;
+    private WebElement priceInIndividualPage;
 
     @FindBy(css = ".store-cart-app p.c-paragraph-2")
-    public WebElement messageInCart;
+    private WebElement messageInCart;
+
+    @FindBy(className = "sfw-dialog")
+    private WebElement newsDialog;
+
+    @FindBy(css = "div.sfw-dialog div[class='c-glyph glyph-cancel']")
+    private WebElement newsDialogClose;
+
+    @FindBy(xpath = "//button[contains(@title, 'Agregar')]")
+    private WebElement addToTheCart;
+
+    public void clickCartIcon(){
+        cartBtn.click();
+    }
+
+    public void clickAddToTheCart(){
+        addToTheCart.click();
+    }
+    public boolean isNewsDialogDisplayed(){
+        return newsDialog.isDisplayed();
+    }
+
+    public void clickCloseNewsDialog(){
+        newsDialogClose.click();
+    }
+
+    public String getCartInfo(){
+        waitForElementToBeClickable(cartBtn);
+        return cartBtn.getAttribute("aria-label");
+    }
 
     public String getMessageYourCartIsEmpty(){
         return messageInCart.getText();
