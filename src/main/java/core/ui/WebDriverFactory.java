@@ -46,6 +46,7 @@ public class WebDriverFactory {
 		chromePrefs.put("download.default_directory", downloadFilepath);
 		ChromeOptions options = new ChromeOptions();
 		options.setExperimentalOption("prefs", chromePrefs);
+		options.setBinary("C:/Program Files/Google/Chrome Beta/Application/chrome.exe");
 
 		if (isHeadless.equalsIgnoreCase("true")) {
 			options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");

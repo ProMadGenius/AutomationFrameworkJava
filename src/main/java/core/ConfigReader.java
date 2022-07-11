@@ -32,10 +32,5 @@ public class ConfigReader {
 	public static final String APP_URL = getConfigValue("appURL");
 	public static final String DRIVER_PATH = getConfigValue("driverpath");
 	public static final String PIPELINE_PATH = getConfigValue("pipelinepath");
-	public static final String DB_CONNECT_STRING = getConfigValue("dbConnectionString");
-	public static final String DB_USER = getConfigValue("dbUsername");
-	public static final String DB_PSWD = getConfigValue("dbPassword");
-	public static final String EMAIL = getConfigValue("email");
-	public static final String PASSWORD = getConfigValue("password");
 
 }

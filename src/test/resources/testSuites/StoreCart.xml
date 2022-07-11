@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Geneva Framework Implementation Test">
+    <test name="Geneva Framework Implementation Test">
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="isHeadless" value="false"/>
+        <classes>
+            <class name="tests.ui.Cart"/>
+        </classes>
+    </test>
+</suite>

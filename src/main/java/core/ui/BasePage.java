@@ -26,7 +26,7 @@ public class BasePage {
 	protected final String loadingPageIcon = "div img[src*='saving-ico']";
 
 	protected BasePage() {
-		wait = new WebDriverWait(getDriver(), Duration.ofSeconds(45));
+		wait = new WebDriverWait(getDriver(), 45);
 		fluentWait = new FluentWait(getDriver());
 	}
 
