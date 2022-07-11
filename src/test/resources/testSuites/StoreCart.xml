@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Geneva Framework Implementation Test">
-    <test name="Geneva Framework Implementation Test">
+<suite name="Automation Testing">
+    <test name="Automation Framework Implementation Test">
         <parameter name="browserName" value="chrome"/>
         <parameter name="isHeadless" value="false"/>
         <classes>
