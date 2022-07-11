@@ -22,20 +22,22 @@ vacío\" message should be present✅
 
 **Acceptance criteria:**
 
--   Use a JSON file for the data driven approach in TC1 (I used XML for
+- Use a JSON file for the data driven approach in TC1 (I used XML for
     some data like the URL)
 
--   Use Page Factory and POM ✅
+- Use Page Factory and POM ✅
 
--   Use TestNG or Junit for Java \| Use NUnit for C\# / .NET ✅ Java
+- Use TestNG or Junit for Java \| Use NUnit for C\# / .NET ✅ Java
 
--   Use Encapsulation and Inheritance to have a more orderly design ✅
+- Use Encapsulation and Inheritance to have a more orderly design ✅
 
--   Research about Single Responsibility principle and apply it. In this
+- Research about Single Responsibility principle and apply it. In this
     case I suggest having dividing methods and elements into different
     classes ✅
 
--   Apply a naming convention ✅
+- Apply a naming convention ✅
 
--   Use an abstract class and an Interface (I need some refactoring, I
+- Use an abstract class and an Interface (I need some refactoring, I
     did not have enough time to do it, and yeah it's easy)
+
+![img.png](img.png)
