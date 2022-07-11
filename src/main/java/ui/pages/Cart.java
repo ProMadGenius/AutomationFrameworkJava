@@ -46,6 +46,34 @@ public class Cart extends BasePage {
     @FindBy(css = "a[aria-label='página anterior']")
     public WebElement previousPage;
 
+    @FindBy(xpath = "//button[contains(@data-m, 'BuyButton')]")
+    public WebElement buyButton;
+
+    @FindBy(css = ".c-channel-placement-price span[itemprop='price']")
+    public WebElement priceItem;
+
+    @FindBy(xpath = "//div[@class='ProductActionsPanel-module__desktopProductActionsPanel___1MnpC']//span[contains(@class, 'Price-module__boldText___34T2w')]")
+    public WebElement priceInIndividualPage;
+
+    @FindBy(css = ".store-cart-app p.c-paragraph-2")
+    public WebElement messageInCart;
+
+    public String getMessageYourCartIsEmpty(){
+        return messageInCart.getText();
+    }
+
+    public float getPriceFromNItem(int pos){
+        return getPriceFromString(groupItemGames.findElements(By.cssSelector("span[itemprop='price']")).get(pos).getAttribute("content"));
+    }
+
+    public float getPriceInIndividualPage(){
+        return getPriceFromString(priceInIndividualPage.getText());
+    }
+
+    public void clickBuyButton(){
+        buyButton.click();
+    }
+
     public void clickNextPage(){
         nextPage.click();
     }
@@ -106,7 +134,9 @@ public class Cart extends BasePage {
         list.get(pos).click();
     }
 
-    // No page elements added
+    public float getPriceFromString(String input){
+        return Float.parseFloat(input.replaceAll(".*?(-?[\\d.]+).*", "$1"));
+    }
 
 
 

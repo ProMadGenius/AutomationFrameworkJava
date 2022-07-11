@@ -3,6 +3,7 @@ package tests.ui;
 import core.dataProviders.SearchDataProvider;
 import core.search.SearchWord;
 import core.ui.BaseTest;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -45,14 +46,16 @@ public class Cart extends BaseTest {
         //7. Go back to the first page and select the first NON-FREE option and STORE the price for later comparison
         Navigator.Cart().clickPreviousPage();
         Navigator.Cart().clickPreviousPage();
+        float price = Navigator.Cart().getPriceFromNItem(0);
+        System.out.println("The price is: " + price);
         Navigator.Cart().clickInTheNProduct(0);
-
-        //8. If you see a "Registration" pop up, close it
         //9. In this page, you will see the price again, compare first price vs current prince and they should match
+        Assert.assertEquals(price, Navigator.Cart().getPriceInIndividualPage(), "The price is different");
         //10. Click on the "3 dot" button next to "Comprar" button and add the item to the CART
+        Navigator.Cart().clickBuyButton();
         //11. Verify the app takes you to the Shopping Cart page and verify you have one element available
+        //TODO: In construction
         //12. Delete the item and verify you have 0 elements: "Tu carro está vacío" message should be present
-
-
+        Assert.assertTrue(Navigator.Cart().getMessageYourCartIsEmpty().contains("Tu carro está vacío."));
     }
 }
