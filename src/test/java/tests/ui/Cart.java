@@ -12,7 +12,7 @@ public class Cart extends BaseTest {
     /**
      * This test case verifies the search and cart basis.
      * Test users: No needed
-     * Data providers: getBatchSignData
+     * Data providers: getSearchWords
      * @param list is provided by data provider
      */
     @Test(groups = {"smoke" ,"regression"}, dataProviderClass = SearchDataProvider.class, dataProvider = "getSearchWords")
@@ -35,7 +35,18 @@ public class Cart extends BaseTest {
         //6. Count the elements on the first 3 pages and print the sum of elements and all the titles
         int count = Navigator.Cart().getCountOfItemDigitalGame();
         Navigator.Cart().printTitlesInThePage();
+        Navigator.Cart().clickNextPage();
+        count = count + Navigator.Cart().getCountOfItemDigitalGame();
+        Navigator.Cart().printTitlesInThePage();
+        Navigator.Cart().clickNextPage();
+        count = count + Navigator.Cart().getCountOfItemDigitalGame();
+        Navigator.Cart().printTitlesInThePage();
+        System.out.println("Total number of items is: " + count);
         //7. Go back to the first page and select the first NON-FREE option and STORE the price for later comparison
+        Navigator.Cart().clickPreviousPage();
+        Navigator.Cart().clickPreviousPage();
+        Navigator.Cart().clickInTheNProduct(0);
+
         //8. If you see a "Registration" pop up, close it
         //9. In this page, you will see the price again, compare first price vs current prince and they should match
         //10. Click on the "3 dot" button next to "Comprar" button and add the item to the CART

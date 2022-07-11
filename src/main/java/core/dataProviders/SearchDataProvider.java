@@ -11,7 +11,7 @@ public class SearchDataProvider {
     @DataProvider(name = "getSearchWords")
     public Object[][] getSearchWords(){
         List<SearchWord> searchList = new ArrayList<>();
-                //GenericUtilities.readJsonFileToList("src/test/resources/data/searchData.json");
+        //TODO: GenericUtilities.readJsonFileToList("src/test/resources/data/searchData.json");
         SearchWord word = new SearchWord();
         word.setSearchWord("xbox");
         searchList.add(word);

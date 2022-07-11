@@ -40,8 +40,26 @@ public class Cart extends BasePage {
     @FindBy(css = "div[class='c-group f-wrap-items context-list-page']")
     public WebElement groupItemGames;
 
+    @FindBy(css = "a[aria-label='página siguiente']")
+    public WebElement nextPage;
+
+    @FindBy(css = "a[aria-label='página anterior']")
+    public WebElement previousPage;
+
+    public void clickNextPage(){
+        nextPage.click();
+    }
+
+    public void clickPreviousPage(){
+        previousPage.click();
+    }
+
     public int getCountOfItemDigitalGame(){
         return groupItemGames.findElements(By.cssSelector("div.m-channel-placement-item img")).size();
+    }
+
+    public void clickInTheNProduct(int n){
+        groupItemGames.findElements(By.cssSelector("div.m-channel-placement-item img")).get(n).click();
     }
 
     public void printTitlesInThePage(){
