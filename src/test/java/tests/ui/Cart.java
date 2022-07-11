@@ -55,7 +55,7 @@ public class Cart extends BaseTest {
         Navigator.Cart().clickInTheNProduct(1);
         //9. In this page, you will see the price again, compare first price vs current prince and they should match
         float priceInPage = Navigator.Cart().getPriceInIndividualPage();
-        System.out.println(priceInPage);
+        System.out.println("The price in the title individually is also: " +priceInPage);
         Assert.assertEquals(price, Navigator.Cart().getPriceInIndividualPage(), "The price is different");
         //10. Click on the "3 dot" button next to "Comprar" button and add the item to the CART
         Navigator.Cart().clickAddToTheCart();

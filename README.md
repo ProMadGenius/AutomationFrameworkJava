@@ -40,4 +40,4 @@ vacío\" message should be present✅
 - Use an abstract class and an Interface (I need some refactoring, I
     did not have enough time to do it, and yeah it's easy)
 
-![img.png](img.png)
+![img_1.png](img_1.png)
